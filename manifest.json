@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "ahlmark.urbit",
+  "name": "Urbit",
+  "version": "0.1.0",
+  "author": "Ahlmark",
+  "description": "Boot a fake ~zod or manage a local Urbit pier from the Omarchy bar",
+  "kinds": ["bar-widget"],
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "Urbit",
+    "description": "Start and stop a local fake ~zod, comet, or real pier",
+    "category": "Communication",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "configFile": "~/.config/omarchy/urbit.json",
+      "pollSeconds": 15
+    },
+    "schema": [
+      { "key": "configFile", "type": "string", "label": "Config file path" },
+      { "key": "pollSeconds", "type": "integer", "label": "Poll interval (seconds)", "min": 5, "max": 120, "step": 5, "defaultValue": 15 }
+    ]
+  }
+}
